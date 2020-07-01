@@ -442,7 +442,7 @@ body {
 }
 
 .layout {
-  max-width: 1600px;
+  /* width: 1600px; */
   width: 100%;
   margin: 0 auto;
 }
@@ -551,7 +551,7 @@ body {
 .block__title,
 .card__title,
 .blocks__title {
-  /* display: block; */
+  display: block;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.66;
@@ -1006,7 +1006,7 @@ body {
   background: rgba(0, 0, 0, 0.2);
 
   opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -1081,7 +1081,8 @@ body {
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.input__field:focus + .input__float--name {
+.input__field:focus + .input__float--name,
+.input__field:not(:placeholder-shown) + .input__float--name {
   font-weight: normal;
   font-size: 12px;
   line-height: 14px;
@@ -1089,6 +1090,10 @@ body {
   color: #2196F3;
 
   transform: translate(-27px, -32px);
+}
+
+.input__field:focus ~ .input__icon {
+  fill: #2196F3;
 }
 
 .modal__textarea {
@@ -1108,6 +1113,24 @@ body {
   letter-spacing: 0.03em;
 
   color: #757575;
+}
+
+.modal__button {
+  color: #ffffff;
+  font-style: 700;
+  font-size: 16px;
+  line-height: 1.6;
+  align: center;
+  vertical-align: center;
+  padding: 10px 55px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modal__button--center {
+  display: flex;
+  align-items: center;
 }
 
 .checkbox-text a {
@@ -1142,8 +1165,12 @@ body {
 }
 
 .modal__close-button {
-  width: 30px;
-  height: 30px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  /* transform: translateX(-100); */
+  width: 20px;
+  height: 20px;
   background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
@@ -1152,6 +1179,45 @@ body {
 /* Скрывает placeholder при фокусе */
 .footer-form__input:focus::placeholder{
   color: transparent;
+}
+
+.custom-checkbox {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.custom-checkbox + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+.custom-checkbox + label::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 2px solid #212121;
+  border-radius: 25%;
+  margin-right: 7px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-checkbox:checked + label::before {
+  border-color: #2196F3;
+  background-color: #2196F3;
+}
+
+.check__icon {
+  position: absolute;
+  display: block;
+  transform: translateX(3px);
 }
 
 .footer__subscribe--positioning {

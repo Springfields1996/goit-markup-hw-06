@@ -128,20 +128,20 @@
           <h2 class="block__title">Чем мы занимаемся</h2>
           <ul class="block__list">
             <li class="block__item">
-              <div class="img block__modal__float">
+              <div class="img block__float">
                 <img class="block__img" src="./image/example-09.jpg" alt="" />
                 <p class="block__text">Десктопные приложения</p>
               </div>
             </li>
             <li class="block__item">
-              <div class="img block__modal__float">
+              <div class="img block__float">
                 <img class="block__img" src="./image/mobile-app.jpg" alt="" />
                 <p class="block__text">Мобильные приложения</p>
               </div>
               
             </li>
             <li class="block__item">
-              <div class="img block__modal__float">
+              <div class="img block__float">
                 <img class="block__img" src="./image/example-06.jpg" alt="" />
                 <p class="block__text">Дизайнерские решения</p>
               </div>
@@ -422,18 +422,18 @@
 
     <div class="backdrop is--hidde" data-backdrop>
       <div class="modal">
-        
+        <button class="modal__close-button" data-modal-close>X</button>
           <p class="modal__title">Оставьте свои данные, мы вам перезвоним</p>
           <form>
             <div class="input">
-              <input class="input__field" type="name"/>
+              <input class="input__field" type="name" placeholder=" "/>
               <label class="input__float--name">Имя</label>
               <svg class="input__icon" width="12px" height="12px">
                 <use href="./image/sprite-2.svg#modal-icon-name"></use>
               </svg>
             </div>
             <div class="input">
-              <input class="input__field" type="tel">
+              <input class="input__field" type="tel" placeholder=" ">
               <label class="input__float--name">Телефон</label>
               <svg class="input__icon" width="13px" height="13px">
                 <use href="./image/sprite-2.svg#modal-icon-phone"></use>
@@ -441,31 +441,35 @@
               
             </div>
             <div class="input">
-              <input class="input__field" type="email">
+              <input class="input__field" type="email" placeholder=" ">
               <label class="input__float--name">Почта</label>
               <svg class="input__icon" width="15px" height="12px">
                 <use href="./image/sprite-2.svg#modal-icon-envelope"></use>
               </svg>
             </div>
             <div class="input">
-              <textarea class="input__field modal__textarea" name="comment" id="" cols="30" rows="10"></textarea>
+              <textarea class="input__field modal__textarea" name="comment" id="" placeholder=" "></textarea>
               <label class="input__float--name">Комментарий</label>
-              <!-- <input class="input__field--comment" type="hidden"> -->
-            
-            
-
-            </textarea>
             </div>
             <div>
-              <input type="checkbox">
+              <input class="custom-checkbox"
+              id="modal__checkbox" type="checkbox">
+              <label for="modal__checkbox">
+                <svg class="check__icon" width="11px" height="8px">
+                  <use href="./image/sprite-2.svg#modal-check"></use>
+                </svg>
                 <span class="checkbox-text"> Соглашаюсь с рассылкой и принимаю
                 <a href="">Условия договора</a>
+              </label>
+                
               </span>
             </div>
-            <button type="submit">Отправить</button>
+            <div class="modal__button--center">
+              <button class="btn modal__button" type="submit">Отправить</button>
+            </div>
         </form>
-      <button type="modal__close-button" data-modal-close></button>
       </div>
+    </div>
     </div>
     <script src="./js/modal.js"></script>
 
