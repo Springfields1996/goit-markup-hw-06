@@ -1173,16 +1173,39 @@ body {
   top: 8px;
   right: 8px;
   /* transform: translateX(-100); */
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
+  opacity: 0.2;
 }
 
 /* Скрывает placeholder при фокусе */
 .footer-form__input:focus::placeholder{
   color: transparent;
+}
+
+.modal__close-button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: #fff;
+  transform: translate(-9px, -22px);
+}
+
+.modal__close-button:focus::after {
+  background-color: rgba(255, 0, 1, 1);
+}
+
+.modal-close-icon {
+  display: inline-block;
+  transform: translate(462px, -29px);
+  pointer-events: none;
 }
 
 .custom-checkbox {
